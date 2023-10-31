@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i, j, arr[50], n, minindex, temp;
+    cout << "Enter the length = ";
+    cin >> n;
+    cout << "Enter the elements = ";
+    
+    for (i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    
+    for (i = 0; i < n; i++) {
+        minindex = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minindex]) {
+                minindex = j;
+            }
+        }
+        
+        temp = arr[minindex];
+        arr[minindex] = arr[i];
+        arr[i] = temp;
+    }
+    
+    cout << "Sorted list is = ";
+    for (i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}
